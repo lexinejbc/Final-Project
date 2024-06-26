@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 20px 10%;
+  transition: all 0.50s ease;
+}
+
+header.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header.scrolled .logo {
+  color:#86A789;
+}
+
+header.scrolled .navigation a {
+  color:#86A789;
+}
+
+header.scrolled .navigation a:hover,
+header.scrolled .navigation a.active {
+  background: #86A789;
+  color: #fff;
+}
+
+.logo {
+  font-size: 2em;
+  color: #86A789;
+  pointer-events: none;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #86A789;
+  padding: 6px 15px;
+  border-radius: 20px;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  background: #86A789;
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  width: 30px;
+  height: 21px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #86A789;
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  top: -8px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  top: 8px;
+}
+
+.nav-toggle:checked+.nav-toggle-label span {
+  background: transparent;
+}
+
+.nav-toggle:checked+.nav-toggle-label span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle:checked+.nav-toggle-label span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.nav-toggle:checked~.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.parallax {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#text {
+  position: absolute;
+  font-size: 5em;
+  color: #86A789;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.sec {
+  background: #4F6F52;
+  padding: 100px 20px;
+}
+
+.sec h1 {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sec p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.aboutus-section {
+  background: url('group1logo.png') no-repeat left;
+  background-size: 50%;
+  background-color: #4F6F52;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #F1EFE7;
+  padding: 40px;
+  text-align: center;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: 600;
+  color: darkgreen;
+}
+
+#textaboutus {
+  font-size: 1em;
+  color: #4F6F52;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+}
+
+.motto {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  font-size: 1em;
+  color: darkolivegreen;
+}
+
+@media screen and (max-width: 1200px) {
+  #text {
+    font-size: 4em;
+  }
+
+  .inner-container {
+    padding: 60px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #text {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #text {
+    font-size: 2em;
+  }
+
+  header {
+    padding: 10px 5%;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  .navigation a {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .aboutus-section {
+    padding: 50px 20px;
+  }
+
+  .inner-container {
+    padding: 20px;
+  }
+
+  .motto {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .parallax img {
+    display: none;
+  }
+}
